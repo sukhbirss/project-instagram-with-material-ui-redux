@@ -31,7 +31,7 @@ export const loginUser = (dataToSubmit) => dispatch => {
 }
 
 export const loadUser = () => dispatch => {
-    axios.post('/users',{},{headers:{
+    axios.get('/users',{headers:{
                             "Content-Type":"application/json",
                             "Authorization":"Bearer " + localStorage.getItem("jwt")
                           }})
@@ -77,7 +77,7 @@ store.dispatch({
 export const getMe = (dataToSubmit) => dispatch => {
 
         fetch("/users/post/mypost",{
-        method:'post',
+        method:'GET',
         headers:{
             "Content-Type":"application/json",
             "Authorization":"Bearer " + localStorage.getItem("jwt")
@@ -95,7 +95,7 @@ export const getMe = (dataToSubmit) => dispatch => {
 }
 
 export const getAllUser = (dataToSubmit) => dispatch => {
-    axios.post('users/alluser',{})
+    axios.get('users/alluser')
                 .then(response => 
                      dispatch({
                                 type: ALL_USER,
@@ -181,7 +181,7 @@ export const updateMe = (data) => dispatch => {
 export const getUserProfile = (id) => dispatch => {
    
 
-    axios.post(`/users/profile/${id}`,{},{headers:{
+    axios.get(`/users/profile/${id}`,{headers:{
                             "Content-Type":"application/json",
                             "Authorization":"Bearer " + localStorage.getItem("jwt")
                           }})
