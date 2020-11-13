@@ -6,12 +6,11 @@ import { showAlert } from './../extra/extra'
 export const loadPost = () => dispatch => {
        console.log("yo2")
 
-    axios.post('users/post/get',{},{headers:{
+    axios.get('users/post/get',{headers:{
                             "Content-Type":"application/json",
                             "Authorization":"Bearer " + localStorage.getItem("jwt")
                           }})
         .then(response => {
-          console.log(response)
                     dispatch({
                           type: POST_LOADED,
                           payload: response.data.post
@@ -22,7 +21,6 @@ export const loadPost = () => dispatch => {
 }
 export const likePost = (id) => dispatch => {
    
-  console.log("working")
     axios.patch('/users/post/like',{id},{headers:{
                             "Content-Type":"application/json",
                             "Authorization":"Bearer " + localStorage.getItem("jwt")
