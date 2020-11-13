@@ -9,14 +9,11 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import Box from '@material-ui/core/Box';
 import HomeContainer from './HomeContainer'
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import { getUserProfile } from "./../actions/user_actions";
-import Hidden from '@material-ui/core/Hidden';
 import DetailDesktop from './DetailDesktop';
 import DetailMobile from './DetailMobile';
 import CircularProgress from '@material-ui/core/CircularProgress';
